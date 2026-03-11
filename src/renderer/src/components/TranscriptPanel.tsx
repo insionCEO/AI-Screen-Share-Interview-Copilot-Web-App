@@ -57,13 +57,13 @@ export function TranscriptPanel(): React.JSX.Element {
 
             {/* Current transcript being typed (not yet finalized) */}
             {currentTranscript && (
-              <div className="flex gap-2 text-sm border-l-2 border-blue-500/50 pl-3 py-1 bg-blue-500/5 rounded-r">
-                <span className="text-blue-400 font-mono text-xs min-w-[20px]">
+              <div className="flex gap-2 text-sm border-l-2 border-purple-500/50 pl-3 py-1 bg-purple-500/5 rounded-r">
+                <span className="text-purple-400 font-mono text-xs min-w-[20px]">
                   {transcripts.length + 1}.
                 </span>
                 <p className="text-dark-300 leading-relaxed flex-1">
                   {currentTranscript}
-                  <span className="inline-block w-0.5 h-4 bg-blue-400 ml-1 animate-pulse align-middle" />
+                  <span className="inline-block w-0.5 h-4 bg-purple-400 ml-1 animate-pulse align-middle" />
                 </p>
               </div>
             )}

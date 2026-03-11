@@ -129,7 +129,7 @@ export function SettingsModal(): React.ReactNode | null {
                 href="https://platform.openai.com/api-keys"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 text-xs text-blue-400 hover:underline"
+                className="ml-2 text-xs text-purple-400 hover:underline"
               >
                 Get key →
               </a>
@@ -145,7 +145,7 @@ export function SettingsModal(): React.ReactNode | null {
                   setLocalSettings({ ...localSettings, openaiApiKey: e.target.value })
                 }
                 placeholder="Enter your OpenAI API key"
-                className="w-full px-3 py-2 pr-10 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 placeholder-dark-500 focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-3 py-2 pr-10 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 placeholder-dark-500 focus:outline-none focus:border-purple-500 transition-colors"
               />
               <button
                 type="button"
@@ -165,7 +165,7 @@ export function SettingsModal(): React.ReactNode | null {
             {modelsLoading ? (
               <div className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg animate-pulse">
                 <div className="flex items-center gap-2">
-                  <Loader2 size={16} className="animate-spin text-blue-400" />
+                  <Loader2 size={16} className="animate-spin text-purple-400" />
                   <span className="text-sm text-dark-400">Loading models...</span>
                 </div>
               </div>
@@ -194,7 +194,7 @@ export function SettingsModal(): React.ReactNode | null {
                 onChange={(e) =>
                   setLocalSettings({ ...localSettings, openaiModel: e.target.value })
                 }
-                className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 focus:outline-none focus:border-purple-500 transition-colors"
               >
                 {models.map((model) => (
                   <option key={model.id} value={model.id}>
@@ -208,7 +208,7 @@ export function SettingsModal(): React.ReactNode | null {
                 onChange={(e) =>
                   setLocalSettings({ ...localSettings, openaiModel: e.target.value })
                 }
-                className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 focus:outline-none focus:border-purple-500 transition-colors"
                 disabled
               >
                 <option value="">Enter API key to load models</option>
@@ -230,7 +230,7 @@ export function SettingsModal(): React.ReactNode | null {
               }
               placeholder="Enter your resume content here..."
               rows={8}
-              className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 placeholder-dark-500 focus:outline-none focus:border-blue-500 transition-colors resize-y"
+              className="w-full px-3 py-2 bg-dark-800 border border-dark-600 rounded-lg text-sm text-dark-100 placeholder-dark-500 focus:outline-none focus:border-purple-500 transition-colors resize-y"
             />
           </div>
 
@@ -249,7 +249,7 @@ export function SettingsModal(): React.ReactNode | null {
               onChange={(e) =>
                 setLocalSettings({ ...localSettings, pauseThreshold: Number(e.target.value) })
               }
-              className="w-full accent-blue-500"
+              className="w-full accent-purple-500"
             />
             <p className="text-xs text-dark-500">
               How long to wait detecting the question for transcription (Recommended : 1500ms)
@@ -271,7 +271,7 @@ export function SettingsModal(): React.ReactNode | null {
               step="0.05"
               value={localSettings.windowOpacity}
               onChange={(e) => handleOpacityChange(Number(e.target.value))}
-              className="w-full accent-blue-500"
+              className="w-full accent-purple-500"
             />
           </div>
         </div>
@@ -312,7 +312,7 @@ export function SettingsModal(): React.ReactNode | null {
             <button
               onClick={handleSave}
               disabled={saveStatus === 'saving'}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
             >
               <Save size={16} />
               <span>{saveStatus === 'saving' ? 'Saving...' : 'Save'}</span>

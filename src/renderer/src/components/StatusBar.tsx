@@ -34,7 +34,7 @@ export function StatusBar(): React.JSX.Element {
     if (isProcessingScreenshot) return 'text-orange-400'
     if (isGenerating) return 'text-purple-400'
     if (isSpeaking) return 'text-green-400'
-    if (isCapturing) return 'text-blue-400'
+    if (isCapturing) return 'text-purple-400'
     return 'text-dark-400'
   }
 
@@ -51,9 +51,11 @@ export function StatusBar(): React.JSX.Element {
           <div className={`relative flex-shrink-0 ${isCapturing ? 'animate-pulse' : ''}`}>
             {isCapturing ? (
               audioSource === 'system' ? (
-                <Volume2 className={`w-5 h-5 ${isSpeaking ? 'text-green-400' : 'text-blue-400'}`} />
+                <Volume2
+                  className={`w-5 h-5 ${isSpeaking ? 'text-green-400' : 'text-purple-400'}`}
+                />
               ) : (
-                <Mic className={`w-5 h-5 ${isSpeaking ? 'text-green-400' : 'text-blue-400'}`} />
+                <Mic className={`w-5 h-5 ${isSpeaking ? 'text-green-400' : 'text-purple-400'}`} />
               )
             ) : (
               <MicOff className="w-5 h-5 text-dark-500" />
@@ -77,7 +79,7 @@ export function StatusBar(): React.JSX.Element {
               onClick={() => setAudioSource('microphone')}
               className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
                 audioSource === 'microphone'
-                  ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                  ? 'bg-purple-600/20 text-purple-400 border border-purple-500/30'
                   : 'bg-dark-700 text-dark-400 hover:bg-dark-600 hover:text-dark-200'
               }`}
               title="Capture from microphone (captures your voice too)"
@@ -89,7 +91,7 @@ export function StatusBar(): React.JSX.Element {
               onClick={() => setAudioSource('system')}
               className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
                 audioSource === 'system'
-                  ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                  ? 'bg-purple-600/20 text-purple-400 border border-purple-500/30'
                   : 'bg-dark-700 text-dark-400 hover:bg-dark-600 hover:text-dark-200'
               }`}
               title="Capture interviewer's voice from video call (recommended)"
@@ -141,7 +143,7 @@ export function StatusBar(): React.JSX.Element {
               ${
                 isCapturing
                   ? 'bg-red-500/20 text-red-400 hover:bg-red-500/30 border border-red-500/30'
-                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 shadow-blue-500/20'
+                  : 'bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-500 hover:to-purple-600 shadow-purple-500/20'
               }
             `}
           >

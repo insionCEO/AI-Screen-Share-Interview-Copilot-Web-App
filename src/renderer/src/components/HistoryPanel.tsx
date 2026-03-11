@@ -129,7 +129,7 @@ export function HistoryPanel({ onClose }: HistoryPanelProps): React.JSX.Element 
     <div className="flex-1 flex flex-col min-h-0 bg-dark-900/30">
       <div className="flex items-center justify-between px-4 py-2 border-b border-dark-700/50">
         <div className="flex items-center gap-2">
-          <History className="w-4 h-4 text-blue-400" />
+          <History className="w-4 h-4 text-purple-400" />
           <span className="text-xs font-semibold text-dark-300 uppercase tracking-wide">
             History
           </span>
@@ -169,7 +169,7 @@ export function HistoryPanel({ onClose }: HistoryPanelProps): React.JSX.Element 
               placeholder="Search questions and answers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 bg-dark-800/50 border border-dark-700/50 rounded text-sm text-dark-100 placeholder-dark-500 focus:outline-none focus:border-blue-500/50 focus:bg-dark-800"
+              className="w-full pl-8 pr-3 py-1.5 bg-dark-800/50 border border-dark-700/50 rounded text-sm text-dark-100 placeholder-dark-500 focus:outline-none focus:border-purple-500/50 focus:bg-dark-800"
             />
             {searchQuery && (
               <button
@@ -188,15 +188,15 @@ export function HistoryPanel({ onClose }: HistoryPanelProps): React.JSX.Element 
           <div className="flex flex-col items-center justify-center h-full text-center py-8">
             <div className="flex gap-1 mb-3">
               <span
-                className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"
+                className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce"
                 style={{ animationDelay: '0ms' }}
               />
               <span
-                className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"
+                className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce"
                 style={{ animationDelay: '150ms' }}
               />
               <span
-                className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"
+                className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce"
                 style={{ animationDelay: '300ms' }}
               />
             </div>
@@ -243,7 +243,7 @@ export function HistoryPanel({ onClose }: HistoryPanelProps): React.JSX.Element 
                 <div className="mt-2 flex justify-end">
                   <button
                     onClick={() => copyToClipboard(entry.answer, entry.id)}
-                    className="flex items-center gap-1 px-2 py-1 text-xs text-dark-400 hover:text-blue-400 hover:bg-blue-500/10 rounded transition-colors"
+                    className="flex items-center gap-1 px-2 py-1 text-xs text-dark-400 hover:text-purple-400 hover:bg-purple-500/10 rounded transition-colors"
                   >
                     {copiedId === entry.id ? (
                       <>

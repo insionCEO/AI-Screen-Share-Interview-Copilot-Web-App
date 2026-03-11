@@ -98,7 +98,7 @@ export function AnswerPanel(): React.JSX.Element {
                   <div className="mt-2 flex justify-end">
                     <button
                       onClick={() => copyToClipboard(answer.answer, answer.id)}
-                      className="flex items-center gap-1 px-2 py-1 text-xs text-dark-400 hover:text-blue-400 hover:bg-blue-500/10 rounded transition-colors"
+                      className="flex items-center gap-1 px-2 py-1 text-xs text-dark-400 hover:text-purple-400 hover:bg-purple-500/10 rounded transition-colors"
                     >
                       {copiedId === answer.id ? (
                         <>
@@ -119,7 +119,7 @@ export function AnswerPanel(): React.JSX.Element {
 
             {/* Current streaming answer */}
             {(currentAnswer || isGenerating) && (
-              <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-lg border border-purple-500/30 overflow-hidden animate-fade-in">
+              <div className="bg-gradient-to-br from-purple-900/20 to-purple-900/20 rounded-lg border border-purple-500/30 overflow-hidden animate-fade-in">
                 {currentQuestion && (
                   <div className="px-3 py-2 bg-purple-900/20 border-b border-purple-500/20">
                     <p className="text-xs text-purple-300 font-medium">

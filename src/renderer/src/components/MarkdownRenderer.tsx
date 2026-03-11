@@ -69,7 +69,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps): React.JSX.
               </div>
             ) : (
               <code
-                className="px-1.5 py-0.5 bg-dark-700/50 text-blue-300 rounded text-xs font-mono"
+                className="px-1.5 py-0.5 bg-dark-700/50 text-purple-300 rounded text-xs font-mono"
                 {...props}
               >
                 {children}
@@ -79,14 +79,14 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps): React.JSX.
           // Blockquotes
           blockquote: ({ ...props }) => (
             <blockquote
-              className="border-l-4 border-blue-500/50 pl-3 py-1 my-2 bg-blue-500/5 text-sm text-dark-200 italic"
+              className="border-l-4 border-purple-500/50 pl-3 py-1 my-2 bg-purple-500/5 text-sm text-dark-200 italic"
               {...props}
             />
           ),
           // Links
           a: ({ ...props }) => (
             <a
-              className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+              className="text-purple-400 hover:text-purple-300 underline underline-offset-2"
               target="_blank"
               rel="noopener noreferrer"
               {...props}
