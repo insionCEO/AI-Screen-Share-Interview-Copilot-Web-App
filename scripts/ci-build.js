@@ -11,10 +11,9 @@ if (isVercel) {
   console.log('Detected Vercel environment — running web-only build (typecheck:web + vite build)')
   try {
     execSync('npm run typecheck:web', { stdio: 'inherit' })
-    // Run Vite via pnpm exec and explicitly pass the renderer folder as the root.
-    // Some Vite CLI versions (like the one on Vercel) don't support a --root flag,
-    // but they do accept the root path as a positional argument.
-    execSync('pnpm exec vite build src/renderer', { stdio: 'inherit' })
+    // Use web-only config so we build just the renderer (no electron-vite multi-target).
+    // Avoids hang/timeout when the root electron config would run main+preload+renderer.
+    execSync('pnpm exec vite build --config vite.web.config.ts', { stdio: 'inherit' })
     process.exit(0)
   } catch (err) {
     console.error('Web-only build failed:', err)
