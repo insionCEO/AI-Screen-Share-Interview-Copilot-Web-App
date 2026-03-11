@@ -11,8 +11,8 @@ if (isVercel) {
   console.log('Detected Vercel environment — running web-only build (typecheck:web + vite build)')
   try {
     execSync('npm run typecheck:web', { stdio: 'inherit' })
-    // Run the locally installed Vite from node_modules and set cwd to renderer
-    execSync('node_modules/.bin/vite build', { stdio: 'inherit', cwd: 'src/renderer' })
+    // Run Vite via pnpm exec from the project's renderer folder so pnpm virtual store is resolved
+    execSync('pnpm exec vite build', { stdio: 'inherit', cwd: 'src/renderer' })
     process.exit(0)
   } catch (err) {
     console.error('Web-only build failed:', err)
