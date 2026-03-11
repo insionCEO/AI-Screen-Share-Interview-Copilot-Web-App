@@ -179,3 +179,33 @@ MIT License - See LICENSE file for details
 Contributions are welcome! Please open an issue or submit a pull request.
 
 # Interview Copilot
+
+## Deployment (Vercel)
+
+Recommended setup for deploying the web renderer on Vercel:
+
+- Build Command: `npm run build`
+- Output Directory: `src/renderer/dist`
+- Environment: Node 18+, Package Manager: `pnpm` (Vercel detects via `pnpm-lock.yaml`)
+
+Notes:
+
+- The repository includes `scripts/ci-build.js` which runs a web-only build on Vercel:
+  - `npm run typecheck:web` (TypeScript check using `tsconfig.web.json`)
+  - `pnpm exec vite build` (run in `src/renderer` to produce the static `dist`)
+- `scripts/postinstall.js` skips Electron-native postinstall steps on Vercel.
+
+If you prefer to configure via `vercel.json`, you can add a minimal file or set the settings in the Vercel dashboard. Example settings to add to the dashboard:
+
+1. Build Command: `npm run build`
+2. Output Directory: `src/renderer/dist`
+
+Optional: if you want Vercel to use a `vercel.json`, create one with the following content (dashboard settings are equivalent):
+
+```json
+{
+  "version": 2
+}
+```
+
+After pushing to `main`, Vercel will auto-deploy. If deployment fails, check the deployment logs in the Vercel dashboard (Project → Deployments → Logs) and paste the failing block here for help.
